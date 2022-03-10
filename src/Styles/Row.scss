@@ -1,0 +1,102 @@
+@import "./Variables.scss";
+.row {
+  background-color: #141414;
+  position: relative;
+  transition: all 0.3s ease;
+
+  &__header {
+    color: white;
+    margin-top: -2rem;
+    z-index: 1;
+    margin-left: 0rem;
+    font-family: $font-secondary;
+  }
+  &__icon-1 {
+    box-sizing: initial;
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    fill: white;
+    transform: rotate(90deg);
+    z-index: 44;
+    top: 5.4rem;
+    left: -5rem;
+    padding-right: 6rem;
+    padding-left: 6rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    &:hover {
+      background-color: rgba(82, 81, 81, 0.295);
+    }
+  }
+  &__icon-2 {
+    box-sizing: initial;
+    fill: white;
+    z-index: 44;
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    transform: rotate(-90deg);
+    top: 5.4rem;
+    right: -4.8rem;
+    padding-right: 6rem;
+    padding-left: 6rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    &:hover {
+      background-color: rgba(70, 69, 69, 0.397);
+    }
+
+    // padding-left: 2.5rem;
+    // padding-right: 2.5rem;
+  }
+}
+
+// .movies {
+//   display: inline-flex;
+//   gap: 10px;
+//   position: absolute;
+//   // position: relative;
+//   transition: all 0.6s ease;
+//   margin-left: 2rem;
+// }
+
+.swiper {
+  margin-top: -40px;
+  width: 100%;
+  height: 150%;
+  overflow: hidden;
+  padding-bottom: 100%;
+  z-index: 1;
+  &:hover {
+    z-index: 22;
+  }
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: none;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  margin-top: 30px;
+}
+
+.headerr {
+  color: white;
+  // position: absolute;
+  // top: -1rem;
+  z-index: 2;
+  margin-top: -40px;
+  margin-left: 1.4rem;
+  font-family: $font-secondary;
+}

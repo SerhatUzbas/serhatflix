@@ -1,0 +1,188 @@
+@import "./Variables.scss";
+@import "./index.scss";
+.header {
+  background-color: rgba(0, 0, 0, 0.726);
+  grid-row: 1/2;
+
+  position: -webkit-sticky;
+  position: sticky;
+  top: -1px;
+  z-index: 444;
+
+  &__logo {
+    height: 80%;
+    position: absolute;
+    top: 0.5rem;
+    left: 2rem;
+  }
+
+  &__nav {
+    width: 30%;
+
+    position: absolute;
+    top: 1.5rem;
+    left: 12rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    font-family: $font-primary;
+    font-weight: 100;
+    @include respond(phone) {
+      width: 8rem;
+    }
+    &--item {
+      text-decoration: none;
+      color: rgb(209, 208, 208);
+      letter-spacing: 0.1rem;
+      transition: all 0.1s ease-in;
+      &:hover {
+        color: gray;
+      }
+    }
+    &--actitem {
+      text-decoration: none;
+      color: rgb(255, 255, 255);
+      letter-spacing: 0.1rem;
+      transform: scale(1.1);
+      transition: all 0.1s ease-in;
+      &:hover {
+        color: gray;
+      }
+    }
+  }
+  &__profile {
+    width: 6rem;
+    position: absolute;
+    top: 1.5rem;
+    right: 0.2rem;
+    display: flex;
+    @include respond(tab-land) {
+      // width < 1355?
+      transform: scale(0.9);
+      top: 1.25rem;
+    }
+    @include respond(tab-port) {
+      // width < 1355?
+      transform: scale(0.7);
+      top: 1.25rem;
+      right: 0.3rem;
+    }
+    @include respond(phone) {
+      // width < 1355?
+      transform: scale(0.55);
+      top: 1.05rem;
+      right: 0.5rem;
+    }
+
+    &:hover .header__profile--down {
+      transition: all 0.2s ease;
+      transform: rotateZ(0deg);
+    }
+    &--icon {
+      width: 2rem;
+      height: 1.8rem;
+      fill: #0971e1;
+      transform: scale(1.5);
+    }
+
+    &--down {
+      width: 2rem;
+      height: 2rem;
+      margin-top: 0rem;
+      transform: rotateZ(180deg);
+      fill: white;
+      transition: all 0.2s ease;
+      @include respond(phone) {
+        transform: scale(1);
+      }
+    }
+    &:hover .header__profile--nav {
+      display: flex;
+    }
+
+    &--nav {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      list-style: none;
+      font-family: $font-primary;
+      font-size: 1rem;
+      color: white;
+      width: 12rem;
+      height: 8rem;
+      background-color: rgba(105, 105, 105, 0.3);
+      z-index: -1;
+      position: absolute;
+      top: 1.8rem;
+      left: -6rem;
+
+      &--item {
+        margin-left: 1rem;
+        margin-top: 0.6rem;
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  &__notify {
+    position: absolute;
+    top: 1.2rem;
+    right: 8rem;
+    color: white;
+    transform: scale(0.8);
+    @include respond(tab-land) {
+      // width < 1355?
+      transform: scale(0.8);
+      top: 0.8rem;
+    }
+    @include respond(tab-port) {
+      // width < 1355?
+      transform: scale(0.65);
+      top: 0.8rem;
+      right: 7rem;
+    }
+    @include respond(phone) {
+      // width < 1355?
+      transform: scale(0.5);
+      top: 0.2rem;
+    }
+  }
+  &__kid {
+    font-size: 1rem;
+    font-family: $font-primary;
+    font-weight: 100;
+    color: white;
+    letter-spacing: 0.1rem;
+    position: absolute;
+    top: 1.5rem;
+    right: 12rem;
+    @include respond(tab-port) {
+      // width < 1355?
+      top: 1.6rem;
+      right: 11rem;
+    }
+    @include respond(phone) {
+      // width < 1355?
+      display: none;
+      transform: scale(0.7);
+      top: 1.25rem;
+    }
+  }
+  &__form {
+    width: 6rem;
+    height: 2rem;
+    position: absolute;
+    top: 1.3rem;
+    right: 14rem;
+  }
+}
+.none {
+  @include respond(phone) {
+    display: none;
+    transform: scale(0.5);
+    top: 0.5rem;
+  }
+}
