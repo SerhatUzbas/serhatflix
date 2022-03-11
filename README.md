@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+### SERHATFLİX
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+serhatflix is netflix clone app which created by Serhat Uzbaş. 
+serhatflix includes react-router,swiper,firebase,formik and more.
+scss is prefered to style page.
 
-## Available Scripts
+### Functionality
 
-In the project directory, you can run:
+1) User can open movie modal screen to see details.
+2) User can bookmark a movie to list and see as realtime data via firebase.
+3) User can search movie or TV shows depends every key stroke with product name.
+4) User can go directly specific URL via react-router.
+5) User can discover products with infinite slider through product types(popularity,top rated eg.).
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### API
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+TMBD API is used to get movies and TV shows. 
 
-### `npm test`
+Pros:
+1) No request limit.
+2) Most of movies and TV shows data is included by TMDB.
+3) Supersearch api gets both movies and TV shows data.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Cons:
+1) Poster size is really different from netflix. It leads to differentiation of design, so layout is not exact Netflix in some places of app.
+2) Datas are seperated  much as meaningless between APIs. It causes unnecessary data fetch from different APIs and that leads some performance issues even they are small ones.
+3) Too much undefined data, especially in old TV shows. It leads some extra effort to handle them.
 
-### `npm run build`
+### TODOS AND REGRETS
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1) Router must get movie from url and load movie directly. (TODO)
+2) Login page will be added.
+3) At least, one local video will be added.
+4) Movie icons(in hover stage) does not have same layout as Netflix. Maybe another API could be preffered. (a bit of regret)
+5) Getting datas in top parent (app.js) is really bad idea especially performance aspect. Too many re-renders occurs and it slows page motion in some parts of site.(hardest regret)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+I am aware of that kind of problems, but I will not change the regret parts, because serhatflix is a practice app, so I will keep in my mind these mistakes and not try again in future projects.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+You can check this app via : https://serhatflix.surge.sh
 
-### `npm run eject`
+Please let me know if you catch any bugs or mistakes that prevents site works or makes worse.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
