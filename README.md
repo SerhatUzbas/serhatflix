@@ -41,3 +41,4 @@ You can check this app via : https://serhatflix.surge.sh
 
 Please let me know if you catch any bugs or mistakes that prevents site works or makes worse.
 
+serhatuzbas@gmail.com
