@@ -30,10 +30,10 @@ Cons:
 ### TODOS AND REGRETS
 
 1) Router must get movie from url and load movie directly. (TODO)
-2) Login page will be added.
-3) At least, one local video will be added.
-4) Movie icons(in hover stage) does not have same layout as Netflix. Maybe another API could be preffered. (a bit of regret)
-5) Getting datas in top parent (app.js) is really bad idea especially performance aspect. Too many re-renders occurs and it slows page motion in some parts of site.(hardest regret)
+2) Login page will be added. (TODO)
+3) At least, one local video will be added. (TODO)
+4) Movie icons(in hover stage) does not have same layout as Netflix because of different poster resolution. Maybe another API could be preffered. (a bit of regret)
+5) Getting datas in top parent (app.js) is really bad idea especially in performance aspect. Too many re-renders occurs and it slows page motion in some parts of site.(hardest regret)
 
 I am aware of that kind of problems, but I will not change the regret parts, because serhatflix is a practice app, so I will keep in my mind these mistakes and not try again in future projects.
 
