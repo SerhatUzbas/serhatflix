@@ -3,9 +3,13 @@ import netflixlogo from "../img/netflix-logo.png";
 import { ReactComponent as Bell } from "../img/SVG/bell.svg";
 import { ReactComponent as User } from "../img/SVG/user.svg";
 import { ReactComponent as Down } from "../img/SVG/triangle-down.svg";
+import { useEffect, useState } from "react";
 import Form from "./Form";
 import { NavLink } from "react-router-dom";
+import { set } from "firebase/database";
 const Header = (props) => {
+  const [headerState, setHeaderState] = useState(false);
+
   let x = document.querySelector(".header__search--input");
   let y = document.querySelector(".header__search--icon");
 
@@ -14,17 +18,32 @@ const Header = (props) => {
 
     if (
       event.target.classList.contains("header__search--icon") === false &&
-      event.target.classList.contains("header__search--input") === false
+      event.target.classList.contains("header__search--input") === false &&
+      event.target.classList.contains("qwe") === false
     ) {
       x.classList.remove("exp");
       y.classList.remove("slide");
     }
   };
-
   const head = document.getElementById("root");
+  head.addEventListener("click", shrinkInput);
+  window.addEventListener("scroll", () => {
+    window.scrollY > 140 ? setHeaderState(true) : setHeaderState(false);
+  });
+  // useEffect(() => {
+  //   if (Number(scroll) > 140) {
+  //     setHeaderState(true);
+  //     console.log(scroll);
+  //   } else {
+  //     setHeaderState(false);
+  //   }
+  // }, [scroll]);
+
   return (
-    <header className='header' onClick={shrinkInput}>
-      <img className='header__logo' src={netflixlogo} alt='netflix-logo' />
+    <header className={headerState ? "header nonopac" : "header opac"}>
+      <NavLink to='/Home'>
+        <img className='header__logo' src={netflixlogo} alt='netflix-logo' />
+      </NavLink>
       <nav className='header__nav'>
         <NavLink
           to='/Home'

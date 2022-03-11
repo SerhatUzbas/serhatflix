@@ -1,3 +1,17 @@
 $font-primary: "Bebas Neue", cursive;
 $font-secondary: "Share Tech Mono", monospace;
 $font-third: "Open Sans", sans-serif;
+
+@font-face {
+  font-family: "myfont";
+  src: url("fonts/Netflix\ Sans\ Light.otf");
+}
+@font-face {
+  font-family: "myfontmed";
+  src: url("fonts/Netflix\ Sans\ Medium.otf");
+}
+
+@font-face {
+  font-family: "myfontbold";
+  src: url("fonts/Netflix\ Sans\ Bold.otf");
+}

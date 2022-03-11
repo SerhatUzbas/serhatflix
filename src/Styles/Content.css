@@ -1,3 +1,18 @@
+@font-face {
+  font-family: "myfont";
+  src: url("fonts/Netflix Sans Light.otf");
+}
+
+@font-face {
+  font-family: "myfontmed";
+  src: url("fonts/Netflix Sans Medium.otf");
+}
+
+@font-face {
+  font-family: "myfontbold";
+  src: url("fonts/Netflix Sans Bold.otf");
+}
+
 *,
 *::before,
 *::after {
@@ -55,12 +70,12 @@ html {
 .content__header {
   position: absolute;
   top: 9.6rem;
-  left: 2rem;
-  font-family: "Share Tech Mono", monospace;
-  font-size: 5rem;
-  letter-spacing: 0.8rem;
+  left: 2.8rem;
+  font-family: "Bebas Neue", cursive;
+  font-size: 4rem;
+  letter-spacing: 0.4rem;
   font-weight: bold;
-  color: #5ac270;
+  color: #faa913;
 }
 
 .content__para {
@@ -68,11 +83,17 @@ html {
   top: 16rem;
   left: 2.7rem;
   width: 30%;
-  font-family: "Bebas Neue", cursive;
+  font-family: "myfontbold";
   font-size: 1.4rem;
-  font-weight: lighter;
-  color: #c4bb97;
-  letter-spacing: 0.1rem;
+  font-weight: bold;
+  color: #c70909;
+  letter-spacing: 0rem;
+}
+
+@media only screen and (max-width: 905px) {
+  .content__para {
+    width: 44%;
+  }
 }
 
 .content__btn-1 {
@@ -92,6 +113,7 @@ html {
   position: absolute;
   bottom: 12rem;
   left: 3rem;
+  cursor: pointer;
 }
 
 .content__btn-1:hover {
@@ -101,7 +123,7 @@ html {
 .content__btn-1 .text-1 {
   font-weight: bold;
   margin-right: 0.7rem;
-  font-family: "Open Sans", sans-serif;
+  font-family: "myfont";
   margin-bottom: 0.1rem;
 }
 
@@ -159,6 +181,7 @@ html {
       -ms-flex-align: center;
           align-items: center;
   border-radius: 0.2rem;
+  cursor: pointer;
 }
 
 .content__btn-2:hover {
@@ -170,6 +193,8 @@ html {
   color: white;
   margin-bottom: 0.1rem;
   font-family: "Open Sans", sans-serif;
+  width: 5rem;
+  font-family: "myfont";
 }
 
 .content__btn-2 .icon-2 {

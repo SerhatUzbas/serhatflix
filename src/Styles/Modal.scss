@@ -22,7 +22,7 @@
 
   &__topcont {
     display: flex;
-    width: 80%;
+    width: 90%;
     margin: auto;
     margin-top: 2rem;
 
@@ -83,6 +83,13 @@
     letter-spacing: 1px;
     font-family: $font-secondary;
     margin-top: 0.5rem;
+    margin-left: 1.5rem;
+    @include respond(big-desktop) {
+      margin-left: 0rem;
+    }
+    @include respond(phone) {
+      margin-left: 0;
+    }
   }
 
   &__overview {

@@ -4,25 +4,54 @@
 .swiper-button-next,
 .swiper-button-prev {
   position: absolute;
-  top: 12%;
+  top: 17.7%;
   width: calc(var(--swiper-navigation-size) / 44 * 27);
   height: var(--swiper-navigation-size);
   margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
   z-index: 10;
   cursor: pointer;
-  display: flex;
+  display: none;
 
   color: rgb(226, 225, 225);
-  padding-top: 6rem;
+
+  padding-top: 4rem;
   padding-bottom: 9rem;
+  transition: all 0.2s ease;
+}
+.swiper-button-next {
+  padding-right: 1rem;
+  margin-right: -0.7rem;
+}
+
+.swiper-button-prev {
+  padding-left: 1rem;
+  padding-right: 2.1rem;
+  margin-left: -1.4rem;
+}
+.swiper-button-next:hover {
+  transform: scale(1.1);
+  background-color: rgba(26, 26, 26, 0.616);
+}
+.swiper-button-prev:hover {
+  background-color: rgba(26, 26, 26, 0.616);
+
+  transform: scale(1.1);
 }
 @media only screen and (max-width: 900px) {
-  .swiper-button-next,
-  .swiper-button-prev {
+  .swiper-button-next {
     transform: scale(0.6);
-    top: 2%;
+    top: 4%;
     padding-top: 10rem;
     padding-bottom: 14rem;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .swiper-button-prev {
+    transform: scale(0.6);
+    top: 12%;
+    padding-top: 7rem;
+    padding-bottom: 10rem;
   }
 }
 @media only screen and (max-width: 600px) {

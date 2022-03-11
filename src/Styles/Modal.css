@@ -1,3 +1,18 @@
+@font-face {
+  font-family: "myfont";
+  src: url("fonts/Netflix Sans Light.otf");
+}
+
+@font-face {
+  font-family: "myfontmed";
+  src: url("fonts/Netflix Sans Medium.otf");
+}
+
+@font-face {
+  font-family: "myfontbold";
+  src: url("fonts/Netflix Sans Bold.otf");
+}
+
 *,
 *::before,
 *::after {
@@ -63,7 +78,7 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 80%;
+  width: 90%;
   margin: auto;
   margin-top: 2rem;
   padding: none;
@@ -150,6 +165,19 @@ html {
   letter-spacing: 1px;
   font-family: "Share Tech Mono", monospace;
   margin-top: 0.5rem;
+  margin-left: 1.5rem;
+}
+
+@media only screen and (max-width: 1800px) {
+  .mcontainer__genres {
+    margin-left: 0rem;
+  }
+}
+
+@media only screen and (max-width: 605px) {
+  .mcontainer__genres {
+    margin-left: 0;
+  }
 }
 
 .mcontainer__overview {

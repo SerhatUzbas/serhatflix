@@ -1,5 +1,5 @@
 import "./Styles/Layout.css";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, useRef } from "react";
 import Modal from "./Components/Modal";
 import Header from "./Components/Header";
 import Home from "./Components/Pages/Home";
@@ -9,6 +9,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import NotFound from "./Components/Pages/NotFound";
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, remove, set, onValue } from "firebase/database";
+import { async } from "@firebase/util";
 function App() {
   const API_KEY = "211db75b256392ca8aebd95022305dda";
 
@@ -43,12 +44,9 @@ function App() {
     (movie, id) => {
       movie.bookmarked = true;
       set(ref(db, `${id}`), movie);
-      console.log("22");
     },
     [db]
   );
-  console.log("asd");
-
   const deleteMovie = useCallback(
     (movie, id) => {
       movie.bookmarked = false;
@@ -59,14 +57,11 @@ function App() {
   const handleFunc = (item) => {
     const isAdded = curState.some((listItem) => listItem.title === item.title);
     !isAdded ? writeDB(item, item.id) : deleteMovie(item, item.id);
-    console.log(curState);
   };
 
   useEffect(() => {
     onValue(ref(db), (snapshot) => {
       const data = snapshot.val();
-      console.log(data);
-
       if (data !== null) {
         setCurState(Object.values(data)); // Object.values(data).map((mov) => setCurState((prev) => [...prev, mov]));
       }
@@ -99,8 +94,6 @@ function App() {
             ? true
             : false,
         }));
-        console.log(data);
-
         setPopMoviesData(data);
       } catch (error) {}
     };
@@ -235,8 +228,6 @@ function App() {
         `https://api.themoviedb.org/3/tv/${id}?api_key=211db75b256392ca8aebd95022305dda&language=en-US`
       );
       const rawdata = await res.json();
-      console.log(rawdata);
-
       const data = {
         title: rawdata.title || rawdata.name || "No data",
         id: rawdata.id || "No data",
@@ -253,7 +244,6 @@ function App() {
         relDate: rawdata.release_date || "No data",
         bookmarked: false,
       };
-      console.log(data);
       setModal(data);
     } catch (error) {}
   }, []);
@@ -268,7 +258,6 @@ function App() {
         const pureData = rawdata.results.filter(
           (movie) => movie.media_type !== "person"
         );
-        console.log(pureData);
         const data = pureData.map((movie) => ({
           title: movie.title || "No data",
           id: movie.id || "No data",
@@ -284,8 +273,6 @@ function App() {
             ? true
             : false,
         }));
-        console.log(data);
-
         setSearchData(data);
       } catch (error) {}
     },
@@ -299,8 +286,6 @@ function App() {
         `https://api.themoviedb.org/3/movie/${id}?api_key=211db75b256392ca8aebd95022305dda&language=en-US`
       );
       const rawdata = await res.json();
-      console.log(rawdata);
-
       const data = {
         title: rawdata.title || "No data",
         id: rawdata.id || "No data",
@@ -320,12 +305,43 @@ function App() {
       setModal(data);
     } catch (error) {}
   }, []);
+  const [contentMovie, setContentMovie] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch(
+          `https://api.themoviedb.org/3/movie/10315?api_key=211db75b256392ca8aebd95022305dda&language=en-US`
+        );
+        const rawdata = await res.json();
+        console.log(rawdata);
+
+        const data = {
+          title: rawdata.title || "No data",
+          type: "movie",
+          id: rawdata.id || "No data",
+          genres: rawdata.genres || "No data",
+          tagline: rawdata.tagline || "Story",
+          overview: rawdata.overview || "No data",
+          vote: rawdata.vote_average || "No data",
+          image: rawdata.poster_path
+            ? `https://image.tmdb.org/t/p/w1280/${rawdata.poster_path}`
+            : "https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg",
+          backdrop: rawdata.backdrop_path
+            ? `https://image.tmdb.org/t/p/w1280/${rawdata.backdrop_path}`
+            : "https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg",
+          relDate: rawdata.release_date || "No data",
+          bookmarked: false,
+        };
+        setContentMovie(data);
+      } catch (error) {}
+    };
+    fetchData();
+  }, []);
 
   const closeModal = useCallback(() => {
     setModal(false);
   }, []);
-
-  //Fetch mostwatched data--------------
 
   return (
     <div className='container'>
@@ -347,6 +363,7 @@ function App() {
               topTvData={topRatedTv}
               onClose={closeModal}
               curState={curState}
+              conmov={contentMovie}
             />
           }
         ></Route>

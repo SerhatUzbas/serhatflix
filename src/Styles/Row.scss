@@ -1,6 +1,7 @@
 @import "./Variables.scss";
 .row {
   background-color: #141414;
+  grid-column: 1/2;
   position: relative;
   transition: all 0.3s ease;
 
@@ -96,7 +97,9 @@
   // position: absolute;
   // top: -1rem;
   z-index: 2;
-  margin-top: -40px;
-  margin-left: 1.4rem;
-  font-family: $font-secondary;
+  margin-top: -24px;
+  margin-left: 3.1rem;
+  font-family: "myfont";
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
 }

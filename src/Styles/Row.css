@@ -1,5 +1,18 @@
+@font-face {
+  font-family: "myfont";
+  src: url("fonts/Netflix Sans Light.otf");
+}
+
+@font-face {
+  font-family: "myfontmed";
+  src: url("fonts/Netflix Sans Medium.otf");
+}
+
 .row {
   background-color: #141414;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
   position: relative;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -88,8 +101,10 @@
 .headerr {
   color: white;
   z-index: 2;
-  margin-top: -40px;
-  margin-left: 1.4rem;
-  font-family: "Share Tech Mono", monospace;
+  margin-top: -24px;
+  margin-left: 3.1rem;
+  font-family: "myfont";
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
 }
 /*# sourceMappingURL=Row.css.map */

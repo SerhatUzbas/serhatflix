@@ -37,8 +37,6 @@ const Movie = (props) => {
 
   let modalid = useParams();
   const openModal = () => {
-    console.log(modalid);
-
     if (props.movie.type === "tv") {
       props.fetchTV(props.movie.id);
     } else if (props.movie.type === "movie") {

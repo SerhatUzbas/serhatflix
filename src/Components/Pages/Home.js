@@ -8,7 +8,7 @@ import { Outlet, Route, Routes } from "react-router-dom";
 const Home = (props) => {
   return (
     <>
-      <Content />
+      <Content conmov={props.conmov} fetchMovie={props.fetchMovie} />
 
       {props.popMoviesData && (
         <Row

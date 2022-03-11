@@ -53,12 +53,11 @@ const Form = (props) => {
     y.classList.add("slide");
     console.log(event.target);
   };
-  console.log(name);
 
   return (
     <div className='header__search'>
       <svg className='header__search--icon' onClick={expandInput}>
-        <Search />
+        <Search className='qwe' onClick={expandInput} />
       </svg>
       <form onChange={handleSubmit}>
         <input

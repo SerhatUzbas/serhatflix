@@ -24,8 +24,17 @@
   overflow-y: hidden;
   list-style: none;
   padding: 0;
+  padding-left: 3.2rem;
+  padding-right: 3rem;
   /* Fix of Webkit flickering */
   z-index: 1;
+}
+.swiper:hover .swiper-button-next,
+.swiper-button-prev {
+  display: block;
+}
+.swiper:hover .swiper-button-prev {
+  display: block;
 }
 
 .swiper-vertical > .swiper-wrapper {

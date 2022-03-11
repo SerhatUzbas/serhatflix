@@ -12,9 +12,9 @@ const Row = (props) => {
       <h1 className='headerr'>{props.title}</h1>
       <Swiper
         key={Math.random().toString()}
-        slidesPerView={7}
-        spaceBetween={0}
-        slidesPerGroup={7}
+        // slidesPerView={8}
+        // spaceBetween={0}
+        // slidesPerGroup={8}
         loop={true}
         loopFillGroupWithBlank={true}
         pagination={{
@@ -24,20 +24,30 @@ const Row = (props) => {
         modules={[Navigation]}
         watchOverflow={false}
         breakpoints={{
-          1300: {
-            slidesPerView: 7,
+          1700: {
+            slidesPerView: 9,
+            slidesPerGroup: 9,
           },
+          1300: {
+            slidesPerView: 8,
+            slidesPerGroup: 8,
+          },
+          900: { slidesPerView: 7, slidesPerGroup: 7 },
           600: {
             slidesPerView: 6,
+            slidesPerGroup: 6,
           },
           450: {
             slidesPerView: 5,
+            slidesPerGroup: 5,
           },
           360: {
             slidesPerView: 4,
+            slidesPerGroup: 4,
           },
           300: {
             slidesPerView: 3,
+            slidesPerGroup: 3,
           },
         }}
       >

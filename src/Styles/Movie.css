@@ -186,23 +186,23 @@ html {
 .hoverleft {
   -webkit-transform-origin: left;
           transform-origin: left;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
   z-index: 33;
 }
 
 .hoverright {
   -webkit-transform-origin: right;
           transform-origin: right;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
   z-index: 33;
 }
 
 .hover {
   z-index: 33;
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
 }
 
 @media only screen and (max-width: 430px) {

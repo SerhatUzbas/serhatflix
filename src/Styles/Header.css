@@ -1,3 +1,18 @@
+@font-face {
+  font-family: "myfont";
+  src: url("fonts/Netflix Sans Light.otf");
+}
+
+@font-face {
+  font-family: "myfontmed";
+  src: url("fonts/Netflix Sans Medium.otf");
+}
+
+@font-face {
+  font-family: "myfontbold";
+  src: url("fonts/Netflix Sans Bold.otf");
+}
+
 *,
 *::before,
 *::after {
@@ -39,7 +54,6 @@ html {
 }
 
 .header {
-  background-color: rgba(0, 0, 0, 0.726);
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1/2;
@@ -54,6 +68,7 @@ html {
   position: absolute;
   top: 0.5rem;
   left: 2rem;
+  cursor: pointer;
 }
 
 .header__nav {
@@ -67,9 +82,14 @@ html {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  font-size: 1rem;
-  font-family: "Bebas Neue", cursive;
-  font-weight: 100;
+  font-size: 0.9rem;
+  font-family: "myfont";
+}
+
+@media only screen and (max-width: 905px) {
+  .header__nav {
+    width: 40%;
+  }
 }
 
 @media only screen and (max-width: 605px) {
@@ -80,22 +100,22 @@ html {
 
 .header__nav--item {
   text-decoration: none;
-  color: #d1d0d0;
+  color: #dfdddd;
   letter-spacing: 0.1rem;
   -webkit-transition: all 0.1s ease-in;
   transition: all 0.1s ease-in;
 }
 
 .header__nav--item:hover {
-  color: gray;
+  color: #b6b5b5;
 }
 
 .header__nav--actitem {
   text-decoration: none;
   color: white;
   letter-spacing: 0.1rem;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
   -webkit-transition: all 0.1s ease-in;
   transition: all 0.1s ease-in;
 }
@@ -109,6 +129,7 @@ html {
   position: absolute;
   top: 1.5rem;
   right: 0.2rem;
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -218,6 +239,7 @@ html {
   color: white;
   -webkit-transform: scale(0.8);
           transform: scale(0.8);
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 1355px) {
@@ -247,13 +269,14 @@ html {
 
 .header__kid {
   font-size: 1rem;
-  font-family: "Bebas Neue", cursive;
+  font-family: "myfont";
   font-weight: 100;
   color: white;
   letter-spacing: 0.1rem;
   position: absolute;
   top: 1.5rem;
-  right: 12rem;
+  right: 11.4rem;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 905px) {
@@ -287,5 +310,13 @@ html {
             transform: scale(0.5);
     top: 0.5rem;
   }
+}
+
+.nonopac {
+  background-color: #141414;
+}
+
+.opac {
+  background-color: rgba(0, 255, 255, 0);
 }
 /*# sourceMappingURL=Header.css.map */
