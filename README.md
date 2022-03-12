@@ -11,6 +11,7 @@ scss is prefered to style page.
 3) User can search movie or TV shows depends every key stroke with product name.
 4) User can go directly specific URL via react-router.
 5) User can discover products with infinite slider through product types(popularity,top rated eg.).
+6) Only home and my list Navitems works. I did not make TV shows, movies and new&popular pages because it is almost same as homepage. So when you click nav items except my list, all of them is highlighted because all goes home page.
 
 
 ### API
